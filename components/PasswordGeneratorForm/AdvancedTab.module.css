@@ -1,0 +1,17 @@
+.advanced_tab {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2rem;
+}
+
+.checkbox_label {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  padding-top: 2rem;
+}
