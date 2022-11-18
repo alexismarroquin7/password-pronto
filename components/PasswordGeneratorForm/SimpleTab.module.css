@@ -1,20 +1,18 @@
-.advanced_tab {
+.simple_tab {
   width: 100%;
   display: flex;
   flex-flow: column wrap;
   gap: 2rem;
 }
 
-.checkbox_label {
+.simple_tab_radio_label {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
-  gap: 1rem;
   justify-content: space-between;
   border-top: 1px solid #ddd;
   padding-top: 2rem;
-  word-wrap: wrap;
+  gap: 1rem;
 }
 
 .helper_text {

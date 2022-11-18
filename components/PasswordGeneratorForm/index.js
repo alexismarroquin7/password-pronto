@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 import { ContentCopy, Refresh } from '@mui/icons-material';
 import { SimpleTab } from "./SimpleTab";
 import { AdvancedTab } from "./AdvancedTab";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const initialTab = 'advanced';
 
@@ -13,7 +14,25 @@ export const PasswordGeneratorForm = () => {
   
   useEffect(() => {
     make();
-  }, [password.lengthToUse, password.useLower, password.useUpper, password.useDigits, password.useSpecial, password.useAmbig]);
+  }, [
+    password.lengthToUse,
+    password.useLower,
+    password.useUpper,
+    password.useDigit,
+    password.useSpecial,
+    password.useGroup,
+    password.useAmbig
+  ]);
+
+  const [copied, setCopied] = useState(false);
+
+  // onClick handler function for the copy button
+  const handleCopy = () => {
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 3000);
+  }
 
   return (
     <form
@@ -25,9 +44,10 @@ export const PasswordGeneratorForm = () => {
       
       <label
         className={styles.text_input_label}
-      >Generated Password:
+      >Your new password:
         <input
           type="text"
+          name="password_generated"
           value={password.generated}
           readOnly
         />
@@ -36,12 +56,18 @@ export const PasswordGeneratorForm = () => {
       <div
         className={styles.actions_container}
       >
-        <button
-          className={`${styles.button_primary} ${styles.button_secondary}`}
+        <CopyToClipboard text={password.generated}
+          onCopy={handleCopy}
         >
-          <ContentCopy/>
-          copy
-        </button>
+          <button
+            className={`${styles.button_primary} ${copied ? '' : styles.button_secondary}`}
+          >
+            <ContentCopy/>
+            {copied ? 'copied!' : 'copy'}
+          </button>
+        
+        </CopyToClipboard>
+        
         <button
           className={styles.button_primary}
           type="button"
@@ -50,21 +76,21 @@ export const PasswordGeneratorForm = () => {
             e.stopPropagation();
             make();
           }}
-          >
-            <Refresh/>
+        >
+            <Refresh />
             refresh
           </button>
       </div>
       
       <label
         className={styles.length_label}
-      >Length 
+      >Length:
         
         <div
           className={styles.length_number_input_container}
         >
           <button
-            className={styles.password_length_button_dec}
+            className={`${styles.password_length_button} ${styles.password_length_button_dec}`}
             disabled={password.lengthToUse === 1}
             onPointerDown={(e) => {
               e.preventDefault();
@@ -77,13 +103,14 @@ export const PasswordGeneratorForm = () => {
             }}
           >-</button>
           <input
+            className={styles.length_number_input}
             type="number"
             name="lengthToUse"
             readOnly
             value={password.lengthToUse}
           />  
           <button
-            className={styles.password_length_button_inc}
+            className={`${styles.password_length_button} ${styles.password_length_button_inc}`}
             disabled={password.lengthToUse === 40}
             onPointerDown={(e) => {
               e.preventDefault();
@@ -96,44 +123,66 @@ export const PasswordGeneratorForm = () => {
             }}
           >+</button>
         </div>
-        
-        <input
-          type="range"
-          min="1"
-          max="40"
-          step="1"
-          name="lengthToUse"
-          value={password.lengthToUse}
-          onChange={handleChange}
-        ></input>
       </label>
+      
+      <input
+        className={styles.slider}
+        type="range"
+        min="1"
+        max="40"
+        step="1"
+        name="lengthToUse"
+        value={password.lengthToUse}
+        onChange={handleChange}
+      ></input>
 
       <div
-        className={styles.tab_list}
+        className={styles.tab_section}
       >
-        <button
-          className={`${styles.tab_button} ${tab === 'simple' && styles.tab_button_selected}`}
-          onPointerDown={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setTab('simple');
-          }}
+        <label
+          className={styles.tab_list_label}
+        >Settings:</label>
+        <div
+          className={styles.tab_buttons}
         >
-          Simple
-        </button>
-        <button
-          className={`${styles.tab_button} ${tab === 'advanced' && styles.tab_button_selected}`}
-          onPointerDown={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setTab('advanced');
-          }}
-        >
-          Advanced
-        </button>
+          <button
+            className={`${styles.tab_button} ${tab === 'simple' && styles.tab_button_selected}`}
+            onPointerDown={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setTab('simple');
+              setPassword({
+                ...password,
+                useLower: true,
+                useUpper: true,
+                useDigit: true,
+                useSpecial: true,
+                useGroup: false,
+                useAmbig: false
+              });
+            }}
+          >
+            Simple
+          </button>
+          <button
+            className={`${styles.tab_button} ${tab === 'advanced' && styles.tab_button_selected}`}
+            onPointerDown={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setTab('advanced');
+            }}
+          >
+            Advanced
+          </button>
+        </div>
+        
       </div>
 
-      {tab === 'simple' && <SimpleTab/>}
+      {tab === 'simple' && <SimpleTab
+        password={password}
+        setPassword={setPassword}
+
+      />}
       {tab === 'advanced' && <AdvancedTab
         password={password}
         handleChange={handleChange}

@@ -1,4 +1,5 @@
 .pg_form {
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -41,19 +42,25 @@
 }
 
 .length_number_input_container {
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  margin-top: .5rem;
 }
 
-.length_label input[type="number"] {
-  width: 4rem;
-  padding: 1rem 0;
-
+.length_number_input {
+  text-align: center;
+  width: 60%;
+  padding: 1rem;
 }
 
-.length_number_input_container button {
-  width: 2rem;
+.length_number_input:focus {
+  outline: none;
+}
+
+.password_length_button {
+  width: 20%;
   padding: 1rem 0;
   display: flex;
   flex-flow: row wrap;
@@ -62,12 +69,21 @@
   background-color: var(--blue);
   border: .2rem solid var(--blue);
   color: white;
-  border-radius: .2rem;
+  border-radius: 1rem;
 }
 
-.length_label input[type="range"] {
+.password_length_button_dec {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.password_length_button_inc {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.slider {
   width: 100%;
-  padding: 2rem 0;
 }
 
 .button_primary {
@@ -82,6 +98,7 @@
   color: white;
   width: 45%;
   text-transform: uppercase;
+  transition: all .2s;
 }
 
 .button_secondary {
@@ -90,9 +107,22 @@
   
 }
 
-.tab_list {
+.tab_section {
   width: 100%;
   display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.tab_list_label {
+  width: 100%;
+}
+
+.tab_buttons {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
 }
 
@@ -108,6 +138,7 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  transition: all .2s;
 }
 
 .tab_button:nth-child(1) {

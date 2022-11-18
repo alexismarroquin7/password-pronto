@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const option = {
+export const charTypeOption = {
   lower: 'abcdefghijklmnopqrstuvwxyz',
   upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   digit: '1234567890',
   special: '!@#$%^&*-_=+?.',
-  grouping: '(){}[]<>',
-  ambig: '\'`\"',
+  group: '(){}[]<>/\\',
+  ambig: '\'`\"|',
 };
 
 const randListItem = (list) => {
@@ -20,7 +20,8 @@ const initialPassword = {
   useUpper: true,
   useDigit: true,
   useSpecial: true,
-  useAmbig: true,
+  useGroup: false,
+  useAmbig: false,
 };
 
 export const usePasswordGenerator = () => {
@@ -42,33 +43,35 @@ export const usePasswordGenerator = () => {
     const charTypes = [];
 
     if(password.useLower) {
-      charTypes.push('lower')
+      charTypes.push('lower');
     }
 
     if(password.useUpper) {
-      charTypes.push('upper')
+      charTypes.push('upper');
     }
 
     if(password.useDigit) {
-      charTypes.push('digit')
+      charTypes.push('digit');
     }
 
     if(password.useSpecial) {
-      charTypes.push('special')
+      charTypes.push('special');
+    }
+    
+    if(password.useGroup) {
+      charTypes.push('group');
     }
 
     if(password.useAmbig) {
-      charTypes.push('ambig')
+      charTypes.push('ambig');
     }
 
     let newPassword = '';
 
     for(let i = 0, len = password.lengthToUse; i < len; i++){
       const charType = randListItem(charTypes);
-      newPassword += randListItem(option[charType]);
+      newPassword += randListItem(charTypeOption[charType]);
     }
-
-    console.log(newPassword);
 
     setPassword({
       ...password,
