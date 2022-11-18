@@ -24,7 +24,8 @@
   padding: 1rem;
   width: 100%;
   border-radius: 1rem;
-  border: 1px solid black;
+  border: .2rem solid var(--blue);
+
   font-family: 'Consolas', monospace;
 }
 
@@ -56,6 +57,7 @@
   text-align: center;
   width: 60%;
   padding: 1rem;
+  border: .2rem solid var(--blue);
 }
 
 .length_number_input:focus {
@@ -73,6 +75,7 @@
   border: .2rem solid var(--blue);
   color: white;
   border-radius: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .password_length_button_dec {
@@ -87,6 +90,7 @@
 
 .slider {
   width: 100%;
+  border-radius: 1rem;
 }
 
 .button_primary {
@@ -102,6 +106,8 @@
   width: 45%;
   text-transform: uppercase;
   transition: all .2s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
 }
 
 .button_secondary {
@@ -127,6 +133,8 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 1rem;
 }
 
 .tab_button {
@@ -167,6 +175,7 @@
 
   .password_generated {
     background-color: var(--grey);
+    
     color: var(--white);
     border-color: var(--blue);
   }
@@ -182,7 +191,6 @@
   .length_number_input {
     background-color: var(--grey);
     color: var(--white);
-    border: 0;
   }
 
   .tab_button {

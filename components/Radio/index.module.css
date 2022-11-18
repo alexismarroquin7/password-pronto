@@ -4,8 +4,6 @@
 
 .radio_container {
   border: .2rem solid #eee;
-  /* padding: .1rem 1rem; */
-  /* padding: .1rem .5rem; */
   width: 2rem;
   height: 2rem;
   border-radius: 100%;
@@ -20,6 +18,8 @@
 .radio_container_on {
   border-color: var(--blue);
   background-color: var(--blue);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
 }
 
 .radio_dot {
