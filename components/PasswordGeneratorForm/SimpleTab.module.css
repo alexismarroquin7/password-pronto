@@ -10,9 +10,16 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  align-items: flex-start;
   border-top: 1px solid #ddd;
   padding-top: 2rem;
   gap: 1rem;
+}
+.simple_tab_radio_label a {
+  color: var(--blue);
+}
+.recommended_text {
+  font-size: 1.4rem;
 }
 
 .helper_text {

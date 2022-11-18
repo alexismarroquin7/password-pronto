@@ -3,4 +3,15 @@
   flex-flow: column wrap;
   padding: 2rem;
   gap: 1rem;
+  background-color: var(--blue);
+}
+
+.home_title {
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .home {
+    background-color: var(--black);
+  }
 }

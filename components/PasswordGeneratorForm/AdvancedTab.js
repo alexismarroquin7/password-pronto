@@ -22,6 +22,14 @@ export const AdvancedTab = ({
             name="useLower"
             checked={password.useLower}
             onChange={handleChange}
+            disabled={
+              password.useLower === true &&
+              password.useUpper === false &&
+              password.useDigit === false &&
+              password.useSpecial === false &&
+              password.useGroup === false &&
+              password.useAmbig === false
+            }
           />
         </CheckBox>
         
@@ -43,6 +51,14 @@ export const AdvancedTab = ({
             name="useUpper"
             checked={password.useUpper}
             onChange={handleChange}
+            disabled={
+              password.useLower === false &&
+              password.useUpper === true &&
+              password.useDigit === false &&
+              password.useSpecial === false &&
+              password.useGroup === false &&
+              password.useAmbig === false
+            }
           />
         </CheckBox>
 
@@ -62,6 +78,14 @@ export const AdvancedTab = ({
             name="useDigit"
             checked={password.useDigit}
             onChange={handleChange}
+            disabled={
+              password.useLower === false &&
+              password.useUpper === false &&
+              password.useDigit === true &&
+              password.useSpecial === false &&
+              password.useGroup === false &&
+              password.useAmbig === false
+            }
           />
         </CheckBox>
 
@@ -82,6 +106,14 @@ export const AdvancedTab = ({
             name="useSpecial"
             checked={password.useSpecial}
             onChange={handleChange}
+            disabled={
+              password.useLower === false &&
+              password.useUpper === false &&
+              password.useDigit === false &&
+              password.useSpecial === true &&
+              password.useGroup === false &&
+              password.useAmbig === false
+            }
           />
         </CheckBox>
         
@@ -102,6 +134,14 @@ export const AdvancedTab = ({
             name="useGroup"
             checked={password.useGroup}
             onChange={handleChange}
+            disabled={
+              password.useLower === false &&
+              password.useUpper === false &&
+              password.useDigit === false &&
+              password.useSpecial === false &&
+              password.useGroup === true &&
+              password.useAmbig === false
+            }
           />
         </CheckBox>
         
@@ -122,6 +162,14 @@ export const AdvancedTab = ({
             name="useAmbig"
             checked={password.useAmbig}
             onChange={handleChange}
+            disabled={
+              password.useLower === false &&
+              password.useUpper === false &&
+              password.useDigit === false &&
+              password.useSpecial === false &&
+              password.useGroup === false &&
+              password.useAmbig === true
+            }
           />
         </CheckBox>
 

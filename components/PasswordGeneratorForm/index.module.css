@@ -3,10 +3,13 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  border: 1px solid black;
+  border: .2rem solid black;
+  border: 0;
   padding: 2rem;
   border-radius: 1rem;
   gap: 2rem;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .text_input_label {
@@ -17,7 +20,7 @@
   gap: .5rem;
 }
 
-.text_input_label input {
+.password_generated {
   padding: 1rem;
   width: 100%;
   border-radius: 1rem;
@@ -154,4 +157,45 @@
 .tab_button_selected {
   background-color: var(--blue);
   color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pg_form {
+    background-color: var(--grey);
+    color: white;
+  }
+
+  .password_generated {
+    background-color: var(--grey);
+    color: var(--white);
+    border-color: var(--blue);
+  }
+  
+  .button_secondary {
+    background-color: var(--grey);
+  }
+
+  .password_length_button {
+    background-color: var(--grey);
+  }
+
+  .length_number_input {
+    background-color: var(--grey);
+    color: var(--white);
+    border: 0;
+  }
+
+  .tab_button {
+    color: var(--white);
+    background-color: var(--grey);
+  }
+  
+  .tab_button_selected {
+    
+    background-color: var(--blue);
+  }
+
+  
+
+  
 }

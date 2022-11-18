@@ -9,7 +9,7 @@ export const SimpleTab = ({
   const handleChange = (e) => {
     const { name } = e.target;
     switch(name){
-      case 'least_secure':
+      case 'less_secure':
         setPassword({
           ...password,
           useLower: true,
@@ -42,7 +42,7 @@ export const SimpleTab = ({
           useAmbig: false
         });
         break;
-      case 'most_secure':
+      case 'more_secure':
         setPassword({
           ...password,
           useLower: true,
@@ -64,7 +64,9 @@ export const SimpleTab = ({
     >
       <label
         className={styles.simple_tab_radio_label}
-      ><p>Least Secure <span className={styles.simple_tab_radio_label_not}>{'(NOT recommended)'}</span></p>
+      ><p>Less Secure{' '} 
+        {/* <span className={styles.recommended_text}>{'(NOT recommended) '}</span> */}
+        <a href="/guidelines">(learn why)</a></p>
         <Radio
           on={
             password.useLower === true &&
@@ -77,7 +79,7 @@ export const SimpleTab = ({
         >
           <input
             type="radio"
-            name="least_secure"
+            name="less_secure"
             onChange={handleChange}
             checked={
               password.useLower === true &&
@@ -89,7 +91,7 @@ export const SimpleTab = ({
             }
           />
         </Radio>
-
+        
         <span
           className={styles.helper_text}
         >
@@ -137,7 +139,7 @@ export const SimpleTab = ({
 
       <label
         className={styles.simple_tab_radio_label}
-      ><p>Secure <span>{'(recommended)'}</span></p>
+      ><p>Secure <a href="/guidelines" className={styles.recommended_text}>{'(recommended)'}</a></p>
         <Radio
           on={
             password.useLower === true &&
@@ -172,7 +174,7 @@ export const SimpleTab = ({
 
       <label
         className={styles.simple_tab_radio_label}
-      >Most Secure
+      >More Secure
         <Radio
           on={
             password.useLower === true &&
@@ -185,7 +187,7 @@ export const SimpleTab = ({
         >
           <input
             type="radio"
-            name="most_secure"
+            name="more_secure"
             onChange={handleChange}
             checked={
               password.useLower === true &&

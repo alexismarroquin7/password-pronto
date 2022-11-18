@@ -15,7 +15,7 @@ const randListItem = (list) => {
 
 const initialPassword = {
   generated: '',
-  lengthToUse: 8,
+  lengthToUse: 12,
   useLower: true,
   useUpper: true,
   useDigit: true,

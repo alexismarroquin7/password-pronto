@@ -6,12 +6,13 @@ import { SimpleTab } from "./SimpleTab";
 import { AdvancedTab } from "./AdvancedTab";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-const initialTab = 'advanced';
+const initialTab = 'simple';
+const maxPasswordLength = 50;
 
 export const PasswordGeneratorForm = () => {
   const { password, setPassword, handleChange, make } = usePasswordGenerator();
   const [tab, setTab] = useState(initialTab);
-  
+
   useEffect(() => {
     make();
   }, [
@@ -26,7 +27,6 @@ export const PasswordGeneratorForm = () => {
 
   const [copied, setCopied] = useState(false);
 
-  // onClick handler function for the copy button
   const handleCopy = () => {
     setCopied(true);
     setTimeout(() => {
@@ -46,6 +46,7 @@ export const PasswordGeneratorForm = () => {
         className={styles.text_input_label}
       >Your new password:
         <input
+          className={styles.password_generated}
           type="text"
           name="password_generated"
           value={password.generated}
@@ -111,11 +112,11 @@ export const PasswordGeneratorForm = () => {
           />  
           <button
             className={`${styles.password_length_button} ${styles.password_length_button_inc}`}
-            disabled={password.lengthToUse === 40}
+            disabled={password.lengthToUse == maxPasswordLength}
             onPointerDown={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              if(password.lengthToUse == 40) return;
+              if(password.lengthToUse == maxPasswordLength) return;
               setPassword({
                 ...password,
                 lengthToUse: Number(password.lengthToUse) + 1
@@ -129,7 +130,7 @@ export const PasswordGeneratorForm = () => {
         className={styles.slider}
         type="range"
         min="1"
-        max="40"
+        max={maxPasswordLength}
         step="1"
         name="lengthToUse"
         value={password.lengthToUse}
@@ -151,15 +152,21 @@ export const PasswordGeneratorForm = () => {
               e.preventDefault();
               e.stopPropagation();
               setTab('simple');
-              setPassword({
-                ...password,
-                useLower: true,
-                useUpper: true,
-                useDigit: true,
-                useSpecial: true,
-                useGroup: false,
-                useAmbig: false
-              });
+              if(
+                password.useAmbig === true
+              ){
+                setPassword({
+                  ...password,
+                  useLower: true,
+                  useUpper: true,
+                  useDigit: true,
+                  useSpecial: true,
+                  useGroup: false,
+                  useAmbig: false
+                });
+
+              }
+              
             }}
           >
             Simple
@@ -183,6 +190,7 @@ export const PasswordGeneratorForm = () => {
         setPassword={setPassword}
 
       />}
+
       {tab === 'advanced' && <AdvancedTab
         password={password}
         handleChange={handleChange}
