@@ -1,5 +1,6 @@
 import { Radio } from "../Radio";
 import styles from "./SimpleTab.module.css";
+import Link from 'next/link'
 
 export const SimpleTab = ({
   password,
@@ -65,8 +66,10 @@ export const SimpleTab = ({
       <label
         className={styles.simple_tab_radio_label}
       ><p>Less Secure{' '} 
-        {/* <span className={styles.recommended_text}>{'(NOT recommended) '}</span> */}
-        <a href="/guidelines">(learn why)</a></p>
+        <Link href="/guidelines">
+          <a>(learn why)</a>
+        </Link>
+        </p>
         <Radio
           on={
             password.useLower === true &&
@@ -139,7 +142,11 @@ export const SimpleTab = ({
 
       <label
         className={styles.simple_tab_radio_label}
-      ><p>Secure <a href="/guidelines" className={styles.recommended_text}>{'(recommended)'}</a></p>
+      ><p>Secure 
+        <Link href="/guidelines">
+          <a className={styles.recommended_text}>{'(recommended)'}</a>
+        </Link>
+        </p>
         <Radio
           on={
             password.useLower === true &&
