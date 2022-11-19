@@ -1,0 +1,80 @@
+.root {
+  width: 100%;
+  margin-bottom: 7rem;
+  transition: all .2s;
+  
+}
+
+.nav_links {
+  top: -200%;
+  right: 0;
+  left: 0;
+  bottom: 100%;
+  position: fixed;
+  transition: all .2s;
+  z-index: 999;
+  padding: 2rem;
+  background-color: var(--white);
+  box-shadow: 0;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.nav_links_open {
+  bottom: 0;
+  top: 6rem;
+  bottom: auto;
+  box-shadow: var(--box-shadow);
+
+}
+
+.nav {
+  width: 100%;
+  background-color: var(--white);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  top: 0;
+  position: fixed;
+  z-index: 1000;
+  box-shadow: var(--box-shadow);
+
+}
+
+.menu_button {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  border: 0;
+  background-color: transparent;
+  color: var(--black);
+}
+
+.nav_links a {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.nav_links a:nth-child(1) {
+  border-top: 0;
+}
+
+.link_selected {
+  
+  color: var(--blue);
+  text-decoration: underline;
+
+}
+
+.nav_links a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}

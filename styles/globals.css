@@ -3,6 +3,7 @@
   --black: black;
   --grey: #0f0f0f;
   --white: white;
+  --box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 * {
@@ -41,4 +42,14 @@ input,
 button,
 span {
   font-size: 1.6rem;
+}
+
+body {
+  background-color: var(--blue);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--black);
+  }
 }

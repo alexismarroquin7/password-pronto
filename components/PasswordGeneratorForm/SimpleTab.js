@@ -66,8 +66,8 @@ export const SimpleTab = ({
       <label
         className={styles.simple_tab_radio_label}
       ><p>Less Secure{' '} 
-        <Link href="/guidelines">
-          <a>(learn why)</a>
+        <Link href="/guide">
+          {'(learn why)'}
         </Link>
         </p>
         <Radio
@@ -142,9 +142,9 @@ export const SimpleTab = ({
 
       <label
         className={styles.simple_tab_radio_label}
-      ><p>Secure 
-        <Link href="/guidelines">
-          <a className={styles.recommended_text}>{'(recommended)'}</a>
+      ><p>Secure{' '}
+        <Link href="/guide">
+          {'(recommended)'}
         </Link>
         </p>
         <Radio
