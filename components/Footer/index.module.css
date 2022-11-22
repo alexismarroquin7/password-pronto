@@ -1,0 +1,26 @@
+.root {
+  background-color: var(--white);
+  padding: 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer_section {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.link {
+  color: var(--blue);
+}
+
+@media (prefers-color-scheme: dark) {
+  .root {
+    background-color: var(--grey);
+    color: var(--white);
+  }
+}

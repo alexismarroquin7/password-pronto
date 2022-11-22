@@ -60,7 +60,7 @@
   color: var(--black);
   text-decoration: none;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .nav_links a:nth-child(1) {
@@ -77,4 +77,7 @@
 .nav_links a:hover {
   color: var(--blue);
   text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
 }

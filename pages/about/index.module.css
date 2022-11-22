@@ -4,6 +4,7 @@
   padding: 2rem;
   gap: 1rem;
 }
+
 .title {
   color: var(--white);
 }
@@ -21,32 +22,4 @@
   display: flex;
   flex-flow: column wrap;
   gap: 1rem;
-}
-
-.content_section a {
-  color: var(--blue);
-}
-
-.content_section ul {
-  padding: 0 2rem;
-  display: flex;
-  flex-flow: column wrap;
-  gap: 1rem;
-}
-
-.text_bold {
-  font-weight: bold;
-}
-
-.text_good {
-  color: var(--green);
-}
-
-.text_bad {
-  color: var(--red);
-}
-
-.text_code {
-  font-family: 'Consolas', monospace;
-  
 }

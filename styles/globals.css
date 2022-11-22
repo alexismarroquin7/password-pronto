@@ -3,7 +3,10 @@
   --black: black;
   --grey: #0f0f0f;
   --white: white;
+  --green: #0F9D58;
+  --red: #DB4437;
   --box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  --border-radius-primary: 1rem;
 }
 
 * {
@@ -40,8 +43,14 @@ option,
 label,
 input,
 button,
-span {
+ol,
+ul,
+li {
   font-size: 1.6rem;
+}
+
+span {
+  font-size: inherit;
 }
 
 body {
