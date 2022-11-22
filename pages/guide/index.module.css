@@ -50,3 +50,10 @@
   font-family: 'Consolas', monospace;
   
 }
+
+@media (prefers-color-scheme: dark) {
+  .content {
+    background-color: var(--grey);
+    color: var(--white);
+  }
+}

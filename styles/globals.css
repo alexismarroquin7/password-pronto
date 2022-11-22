@@ -53,6 +53,10 @@ span {
   font-size: inherit;
 }
 
+a {
+  color: var(--blue);
+}
+
 body {
   background-color: var(--blue);
 }

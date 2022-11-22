@@ -16,10 +16,18 @@
   border-radius: 1rem;
   padding: 2rem;
   gap: 2rem;
+  margin-bottom: 100%;
 }
 
 .content_section {
   display: flex;
   flex-flow: column wrap;
   gap: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .content {
+    background-color: var(--grey);
+    color: var(--white);
+  }
 }

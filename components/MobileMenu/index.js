@@ -3,6 +3,30 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "./index.module.css";
+import { v4 as uuid } from "uuid";
+
+const links = [
+  {
+    id: uuid(),
+    text: "Password Generator",
+    href: "/"
+  },
+  {
+    id: uuid(),
+    text: "Guide",
+    href: "/guide"
+  },
+  {
+    id: uuid(),
+    text: "About",
+    href: "/about"
+  },
+  {
+    id: uuid(),
+    text: "Contact",
+    href: "/contact"
+  }
+]
 
 export const MobileMenu = () => {
   const [open, setOpen] = useState(false);
@@ -49,29 +73,14 @@ export const MobileMenu = () => {
     <div
       className={`${styles.nav_links} ${open ? styles.nav_links_open : ''}`}
     >
-      <Link
-        className={`${styles.link}`}
-        href="/"
-      >Password Generator
-      </Link>
-      
-      <Link
-        className={`${styles.link}`}
-        href="/guide"
-      >Guide
-      </Link>
-      
-      <Link
-        className={`${styles.link}`}
-        href="/about"
-      >About
-      </Link>
-      
-      <Link
-        className={`${styles.link}`}
-        href="/contact"
-      >Contact
-      </Link>
+      {links.map(link => {        
+        return <Link
+          key={link.id}
+          className={`${styles.link} ${link.href === router.asPath ? styles.link_active : ''}`}
+          href={link.href}
+        >{link.text}
+        </Link>
+      })}
     </div>
   
   </div>

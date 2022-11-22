@@ -35,8 +35,8 @@ const footer = {
       id: uuid(),
       text: "Alexis Marroquin",
       link: true,
-      href: "",
-      target: "https://alexismarroquin.com"
+      href: "https://alexismarroquin.com",
+      target: "_blank"
     },
   ]
 }
@@ -70,6 +70,7 @@ export const Footer = () => {
           <Link
             key={p.id}
             href={p.href}
+            target={p.target}
             className={styles.link}
           >
             {p.text}
