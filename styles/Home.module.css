@@ -6,6 +6,10 @@
   background-color: var(--blue);
 }
 
+.home_title {
+  color: var(--white);
+}
+
 @media (prefers-color-scheme: dark) {
   .home {
     background-color: var(--black);
