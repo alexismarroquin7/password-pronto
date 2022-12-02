@@ -15,3 +15,9 @@
     background-color: var(--black);
   }
 }
+
+@media(min-width: 769px){
+  .home {
+    padding: 2rem 25%;
+  } 
+}
