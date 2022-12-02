@@ -23,15 +23,15 @@ export default function GuidePage (){
           it is paramount that you take safety measures to protect yourself online from malicious actors.
         </p>
         <p>          
-          There are many types of hacking that are practiced in order take advatange of unsuspecting victims,
+          There are many types of hacking that are practiced in order to take advatange of unsuspecting victims,
           a few examples include: phishing, malware, social engineering, or even password cracking
           (<Link href="https://www.geeksforgeeks.org/types-of-hacking/" target="_blank">more here</Link>).
         </p>
         <p>
-          One of the most effective ways to prevent hackers from hijacking you social media, banking, or any online account you may use everyday is by setting secure passwords.
+          One of the most effective ways to prevent hackers from hijacking your social media, banking, or any online account is by setting secure passwords.
         </p>
         <p>
-          You can never be {'"100% safe"'}, but the key is to <span>make it as difficult as possible for the potential hacker</span> to succeed in gaining access to your account.
+          You can never be {'"100% safe,"'} but the key is to <span>make it as difficult as possible for the potential hacker</span> to succeed in gaining access to your account.
           By following a few basic guidelines, {"you'll"} be ready to start securing your accounts.
         </p>
       </section>

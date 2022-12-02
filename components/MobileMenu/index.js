@@ -45,9 +45,8 @@ export const MobileMenu = () => {
     <nav
       className={styles.nav}
     >
-  
       <h3>Password Pronto</h3>
-      
+        
       <button
         className={styles.menu_button}
         onPointerDown={(e) => {
