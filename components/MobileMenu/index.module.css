@@ -2,7 +2,10 @@
   width: 100%;
   margin-bottom: 7rem;
   transition: all .2s;
-  
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo_container {
@@ -43,7 +46,6 @@
   position: fixed;
   z-index: 1000;
   box-shadow: var(--box-shadow);
-
 }
 
 .menu_button {
@@ -105,5 +107,27 @@
   .link_active {
     color: var(--blue);
     text-decoration: underline;
+  }
+}
+
+@media (min-width: 769px){
+ 
+ 
+  .nav {
+    flex-flow: row-reverse wrap;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .nav_links {
+    top: 6rem;
+    bottom: 0;
+    left: -20%;
+    right: 100%;
+  }
+  
+  .nav_links_open {
+    left: 0;
+    right: 80%;
   }
 }

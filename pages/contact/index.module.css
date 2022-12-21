@@ -25,3 +25,9 @@
     color: var(--white);
   }
 }
+
+@media (min-width: 769px){
+  .root {
+    padding: 2rem 25%;
+  }
+}
