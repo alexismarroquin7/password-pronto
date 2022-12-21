@@ -4,7 +4,6 @@ import styles from "./index.module.css";
 export default function GuidePage (){
   return <div
     className={styles.root}
-  
   >
 
     <h1
