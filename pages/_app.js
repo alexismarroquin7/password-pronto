@@ -8,8 +8,7 @@ function MyApp({ Component, pageProps }) {
       <MobileMenu/>
       <Component {...pageProps} />
       <Footer/>
-    </div>      
-    
+    </div>
   )
   
 }
