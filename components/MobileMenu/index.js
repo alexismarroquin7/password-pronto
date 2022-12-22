@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "./index.module.css";
 import { v4 as uuid } from "uuid";
+import { PasswordProntoIcon } from "../PasswordProntoIcon";
 
 const links = [
   {
@@ -45,8 +46,13 @@ export const MobileMenu = () => {
     <nav
       className={styles.nav}
     >
-      <h3>Password Pronto</h3>
-        
+      <div
+        className={styles.logo_container}
+      >
+        <PasswordProntoIcon/>
+        <h3>Password Pronto</h3>
+      </div>
+      
       <button
         className={styles.menu_button}
         onPointerDown={(e) => {

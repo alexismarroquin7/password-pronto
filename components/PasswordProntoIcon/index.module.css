@@ -1,0 +1,12 @@
+
+@media (prefers-color-scheme: dark) {
+  .logo_rect {
+    fill: white;
+  }
+  .logo_path_a {
+    fill: black;
+  }
+  .logo_path_b {
+    fill: white;
+  }
+}

@@ -8,6 +8,13 @@
   justify-content: center;
 }
 
+.logo_container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: .5rem;
+}
+
 .nav_links {
   top: -50%;
   right: 0;
